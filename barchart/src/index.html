@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1.1", {packages: ["bar"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Day', 'Success', 'Failed'],
+                ['ma', 1000, 400],
+                ['di', 1170, 460],
+                ['wo', 660, 1120],
+                ['do', 1030, 540],
+                ['vr', 1030, 540],
+                ['za', 1030, 540],
+                ['zo', 1030, 540]
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Success and failed password resets',
+                    subtitle: 'period description',
+                    animation: {
+                        duration: 1000,
+                        easing: 'out'
+                    }
+                },
+                bars: 'vertical'
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function () {
+            $("#datepicker_from").datepicker({dateFormat: "dd-mm-yy"});
+        });
+        $(function () {
+            $("#datepicker_to").datepicker({defaultDate: +7, dateFormat: "dd-mm-yy"});
+        });
+
+    </script>
+</head>
+<body>
+<div id="barchart_selections">
+    period:
+    <SELECT>
+        <OPTION Value="daily">daily</OPTION>
+        <OPTION Value="monthly">monthly</OPTION>
+    </SELECT>
+    from:
+    <input type="text" id="datepicker_from"></p>
+    to:
+    <input type="text" id="datepicker_to"></p>
+    <div id="calculate"><refresh></refresh></div>
+</div>
+<div id="barchart_material" style="width: 900px; height: 500px;"></div>
+
+<script>
+    $("#calculate").click(function() {alert("refresh.")});
+</script>
+</body>
+</html>

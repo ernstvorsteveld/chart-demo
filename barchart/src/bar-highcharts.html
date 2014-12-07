@@ -1,0 +1,49 @@
+<html>
+
+
+<head>
+    <link rel="StyleSheet" href="css/reporting.css" type="text/css" media="screen"/>
+    <link rel="StyleSheet" href="js/api/jquery-ui.min.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+<div id="selection">
+    period:
+    <SELECT id="period_picker">
+        <OPTION Value="Daily">daily</OPTION>
+        <OPTION Value="Monthly">monthly</OPTION>
+    </SELECT>
+    from:
+    <select id="month_picker" display="none">
+        <option value="january">january</option>
+        <option value="february">february</option>
+        <option value="march">march</option>
+        <option value="april">april</option>
+        <option value="may">may</option>
+        <option value="june">june</option>
+        <option value="july">july</option>
+        <option value="august">august</option>
+    </select>
+    <input type="text" id="date_picker_from" display="none"></p>
+    to:
+    <input type="text" id="date_picker_to"></p>
+    <div id="calculate">calculate</div>
+</div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript" src="js/api/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/api/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="js/api/jquery-1.11.1.min.map"></script>-->
+
+<script src="js/core/date.js"></script>
+<script src="js/core/view-colours.js"></script>
+<script src="js/core/data-provider.js"></script>
+<script src="js/core/refresh-handler.js"></script>
+<script src="js/api/highcharts.js"></script>
+<script src="js/api/exporting.js"></script>
+<script src="js/highcharts/highcharts-bar.js"></script>
+<script src="js/highcharts/main.js"></script>
+
+</body>
+
+</html>
