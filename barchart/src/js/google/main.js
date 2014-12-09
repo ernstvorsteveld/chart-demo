@@ -2,7 +2,8 @@ var googleColumnChart;
 
 function initializeGoogle() {
     var dataProvider = new DataProvider();
-    googleColumnChart = new GoogleColumnChart("google_chart_div", dataProvider);
+    var viewColors = new ViewColors();
+    googleColumnChart = new GoogleColumnChart("google_chart_div", dataProvider, viewColors);
     googleColumnChart.withTitles("Password resets", "weekly");
 
     google.load("visualization", "1", {packages: ["corechart"]});

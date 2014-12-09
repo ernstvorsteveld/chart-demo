@@ -1,18 +1,19 @@
-function HighChartsBarChart(dataProvider, viewColors) {
+function HighChartsBarChart(dataProvider, viewColors, container) {
     this.dataProvider = dataProvider;
     this.colors = viewColors;
+    this.container = container;
 }
 
 HighChartsBarChart.prototype.draw = function (periodType, dateFrom, dateTo) {
     var data = this.dataProvider.getDataPerPeriod(periodType, null, null);
-    $('#container').highcharts(this.getChartObject(data, periodType));
+    new Highcharts.Chart(this.getChartObject(data, periodType, this.container));
 };
 
 HighChartsBarChart.prototype.getColors = function () {
     return this.colors;
 };
 
-HighChartsBarChart.prototype.getChartObject = function (data, period) {
+HighChartsBarChart.prototype.getChartObject = function (data, period, container) {
     var chartObject = {
         chart: {
             type: 'column'
@@ -35,6 +36,10 @@ HighChartsBarChart.prototype.getChartObject = function (data, period) {
         },
         credits: {
             enabled: false
+        },
+        chart: {
+            renderTo: container,
+            defaultSeriesType: 'column'
         },
         tooltip: this.getToolTip(data),
         plotOptions: {

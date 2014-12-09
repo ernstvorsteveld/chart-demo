@@ -1,8 +1,8 @@
 function ViewColors() {
     this.colors = {
         bar: {
-            odd: "#FFFF00",
-            even: "#AAFF00"
+            odd: "#4571ab",
+            even: "#A84841"
         },
         alternateGridColor: "#FDFFD5"
     };
@@ -14,6 +14,10 @@ ViewColors.prototype.getBarColor = function (index) {
     } else {
         return this.colors.bar.odd;
     }
+};
+
+ViewColors.prototype.getColors = function() {
+    return this.colors;
 };
 
 ViewColors.prototype.getAlternateGridColor = function () {

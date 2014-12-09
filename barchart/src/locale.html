@@ -1,0 +1,15 @@
+<html>
+<script src="js/data/locale.js"></script>
+<script src="js/data/data.js"></script>
+<script src="js/data/data-user.js"></script>
+
+<body>
+<script>
+    var localeFunctions = new LocaleFunctions();
+    var reportSpecification = new ReportSpecification(data, localeFunctions);
+
+    alert(localeFunctions.getLanguage());
+    alert(reportSpecification.getReportTitle());
+</script>
+</body>
+</html>

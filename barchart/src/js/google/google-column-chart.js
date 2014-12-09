@@ -1,6 +1,7 @@
-function GoogleColumnChart(elementName, dataProvider) {
+function GoogleColumnChart(elementName, dataProvider, viewColors) {
     this.elementName = elementName;
     this.dataProvider = dataProvider;
+    this.viewColors = viewColors;
     this.chartLegend = {};
 }
 
@@ -14,7 +15,8 @@ GoogleColumnChart.prototype.draw = function (period, dateFrom, dateTo) {
     var data = google.visualization.arrayToDataTable(arrayToTableData);
     var options = {
         title: this.chartLegend.title,
-        hAxis: {title: this.chartLegend.hAxisTitle, titleTextStyle: {color: 'red'}}
+        hAxis: {title: this.chartLegend.hAxisTitle, titleTextStyle: {color: 'red'}},
+        colors: [this.viewColors.getColors().bar.even, this.viewColors.getColors().bar.odd]
     };
     var chart = new google.visualization.ColumnChart(document.getElementById(this.elementName));
     chart.draw(data, options);

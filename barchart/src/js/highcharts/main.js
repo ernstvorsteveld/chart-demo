@@ -2,7 +2,7 @@ function initialize() {
     var viewColors = new ViewColors();
     var dataProvider = new DataProvider();
     var periodType = new PeriodType("Daily");
-    var highChartsBarChart = new HighChartsBarChart(dataProvider, viewColors);
+    var highChartsBarChart = new HighChartsBarChart(dataProvider, viewColors, "container");
     highChartsBarChart.draw(periodType, null, null);
     var refreshHandler = new RefreshHandler(highChartsBarChart);
 }
