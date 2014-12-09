@@ -1,5 +1,4 @@
 var data = {
-    "@class": "nl.iwelcome.domain.report.ReportSpecification",
     "id": null,
     "customerName": "test",
     "version": 1,
